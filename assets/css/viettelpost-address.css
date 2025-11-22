@@ -1,0 +1,81 @@
+/**
+ * Vietnam Address Fields Styles
+ */
+
+/* Hide country field completely */
+#billing_country_field,
+#shipping_country_field,
+.form-row.country-field,
+.woocommerce-address-fields .country-field,
+.viettelpost-hidden-country,
+input[name="billing_country"],
+input[name="shipping_country"],
+select[name="billing_country"],
+select[name="shipping_country"] {
+	display: none !important;
+	visibility: hidden !important;
+	height: 0 !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	position: absolute !important;
+	left: -9999px !important;
+	width: 0 !important;
+}
+
+/* Hide postcode field */
+#billing_postcode_field,
+#shipping_postcode_field,
+.form-row.postcode-field,
+input[name="billing_postcode"],
+input[name="shipping_postcode"] {
+	display: none !important;
+	visibility: hidden !important;
+	height: 0 !important;
+	overflow: hidden !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* Style for province/district/ward selects */
+.viettelpost-province select,
+.viettelpost-district select,
+.viettelpost-ward select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.viettelpost-province select:disabled,
+.viettelpost-district select:disabled,
+.viettelpost-ward select:disabled {
+	background-color: #f5f5f5;
+	cursor: wait;
+}
+
+/* Loading state */
+.viettelpost-loading {
+	position: relative;
+}
+
+.viettelpost-loading::after {
+	content: '';
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 16px;
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid #3498db;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: translateY(-50%) rotate(0deg); }
+	100% { transform: translateY(-50%) rotate(360deg); }
+}
+
